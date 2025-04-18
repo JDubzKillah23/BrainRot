@@ -12,7 +12,6 @@
   margin: auto; 
   background-image: url("https://img.freepik.com/premium-vector/desert-road-wild-west-landscape-ai-generated-8bit-pixel-game-scene-vector-cartoon-background-western-canyon-valley-mountains-with-sand-path-cactus-arizona-mexico-desert-pixel_8071-54770.jpg");
   background-size: cover;
-  animation: shake 0.1s infinite alternate;
   position: relative;
 }
 
