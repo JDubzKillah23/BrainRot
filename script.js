@@ -2,6 +2,7 @@ const dino = document.getElementById("dino");
 const rock = document.getElementById("rock");
 const score = document.getElementById("score");
 const speechBubble = document.getElementById("speech-bubble");
+const gameOverImg = document.getElementById("game-over-image"); // Ohio.png image
 
 // --- JUMP LOGIC ---
 function jump() {
@@ -53,10 +54,15 @@ setInterval(() => {
     const laugh = new Audio("laugh.mp3");
     laugh.play();
 
+    // Show the Ohio image
+    if (gameOverImg) {
+      gameOverImg.style.display = "block";
+    }
+
     setTimeout(() => {
       alert("💀💀💀 You Got Ohiod with a score of: " + score.innerText + "\n\nTry again, brave soul?");
       location.reload();
-    }, 500); // delay so laugh can play a bit
+    }, 500); // let the image and laugh play for .5 seconds
   }
 }, 33);
 
