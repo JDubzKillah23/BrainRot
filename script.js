@@ -47,8 +47,13 @@ setInterval(() => {
   }
 
   if (rockLeft < 50 && rockLeft > 0 && dinoTop > 150) {
-    alert("💀 You folded with a score of: " + score.innerText + "\n\nTry again, brave soul?");
-    location.reload();
+    const laugh = new Audio("laugh.mp3");
+    laugh.play();
+
+    setTimeout(() => {
+      alert("💀💀💀 You Got Ohiod with a score of: " + score.innerText + "\n\nTry again, brave soul?");
+      location.reload();
+    }, 500); // delay so laugh can play a bit
   }
 }, 33);
 
