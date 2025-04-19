@@ -3,7 +3,7 @@
   font-family: sans-serif;
   font-size: 24px;
   color: rgb(0, 0, 0);
-  text-shadow: 2px 2px lime;
+  text-shadow: 2px 2px rgb(21, 255, 0);
 }
 
 #game {
@@ -152,4 +152,15 @@
   #jump-btn {
     display: block;
   }
+}
+
+#game-over-image {
+  display: none;
+  width: 750px;
+  /* change size if needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
