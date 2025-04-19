@@ -1,6 +1,21 @@
 const dino = document.getElementById("dino");
 const rock = document.getElementById("rock");
 const score = document.getElementById("score");
+let highScore = localStorage.getItem("highScore") || 0;
+updateHighScoreDisplay();
+
+function updateHighScoreDisplay() {
+  if (!document.getElementById("high-score")) {
+    const highScoreEl = document.createElement("h2");
+    highScoreEl.id = "high-score";
+    highScoreEl.style.textAlign = "center";
+    highScoreEl.style.color = "black";
+    highScoreEl.innerText = "🏆 High Score: " + highScore;
+    score.insertAdjacentElement("afterend", highScoreEl);
+  } else {
+    document.getElementById("high-score").innerText = "🏆 High Score: " + highScore;
+  }
+}
 const speechBubble = document.getElementById("speech-bubble");
 const gameOverImg = document.getElementById("game-over-image"); // Ohio.png image
 
@@ -53,6 +68,11 @@ setInterval(() => {
   if (rockLeft < 50 && rockLeft > 0 && dinoTop > 150) {
     const laugh = new Audio("laugh.mp3");
     laugh.play();
+    if (parseInt(score.innerText) > highScore) {
+      highScore = parseInt(score.innerText);
+      localStorage.setItem("highScore", highScore);
+    }
+
 
     // Show the Ohio image
     if (gameOverImg) {
