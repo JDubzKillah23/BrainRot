@@ -5,6 +5,9 @@ const speechBubble = document.getElementById("speech-bubble");
 
 // --- JUMP LOGIC ---
 function jump() {
+  const jumpSound = new Audio("jump.mp3");
+  jumpSound.play();
+
   dino.classList.add("jump-animation");
   setTimeout(() => dino.classList.remove("jump-animation"), 300);
 }
